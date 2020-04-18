@@ -25,6 +25,7 @@ jobs:
     - name: Testing Options
       id: validate
       uses: Cyb3r-Jak3/html5validator-action@v0.4
+      continue-on-error: true
       with:
         root: .
         format: json
@@ -32,7 +33,9 @@ jobs:
         extra: -lll
         css: true
         action_debug: true
+      
     - uses: actions/upload-artifact@v1
+    
       with:
         name: log
         path: log.log
