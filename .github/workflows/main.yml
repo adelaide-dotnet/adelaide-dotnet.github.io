@@ -28,11 +28,9 @@ jobs:
       continue-on-error: true
       with:
         root: .
-        format: json
+        format: text
         log_level: INFO
         extra: -lll
-        css: true
-        action_debug: true
       
     - uses: actions/upload-artifact@v1
     
