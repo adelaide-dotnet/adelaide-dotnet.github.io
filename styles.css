@@ -1,0 +1,25 @@
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #011a00;
+      color: #0bff00;
+    }
+
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+      color: #0bff00;
+      margin-top: 70px;
+      text-align: center;
+      font-size: 70px;
+    }
+
+    p {
+      color: #0bff00;
+    }
+
+    a {
+      color: #0bff00;
+    }
+
+    footer {
+      text-align: center;
+    }
