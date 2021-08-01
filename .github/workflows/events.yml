@@ -13,11 +13,13 @@ jobs:
 
       - name: Get RSS Feed
         uses: sarisia/actions-readme-feed@v1.6.2
+        id: feed
         with:
           url: https://www.meetup.com/Adelaide-dotNET/events/rss/
           max_entry: 2
           file: index.html
           timezone: Australia/Adelaide
+          format: '[${title}](${url})' # RSS Feed date is not the date of the event
 
       - if: ${{ steps.feed.outputs.changed == true }}
         uses: sarisia/actions-commit@master
