@@ -10,19 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Get RSS Feed
-        uses: kohrongying/readme-the-rss@master
+        uses: sarisia/actions-readme-feed@v1.6.2
         with:
-          feed_url: https://www.meetup.com/Adelaide-dotNET/events/rss/
-          count: 2 # default 5
-          readme_path: index.html
-      - name: Commit file changes
-        run: |
-            git config --global user.name 'David Gardiner (RSS)'
-            git config --global user.email 'david@gardiner.net.au'
-            git add .
-            git diff --quiet --cached || git commit -m "Update README"    
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          url: https://www.meetup.com/Adelaide-dotNET/events/rss/
+          max_entry: 2
+          file: index.html
+          timezone: Australia/Adelaide
+
+      - if: ${{ steps.feed.outputs.changed == true }}
+        uses: sarisia/actions-commit@master

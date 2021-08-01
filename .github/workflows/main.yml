@@ -16,19 +16,11 @@ jobs:
     name: Lighthouse CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js 10.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-      # - name: npm install, build
-      #   run: |
-      #     npm install
-      #     npm run build
-      - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.3.x
-          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install && npm install -g @lhci/cli@0.8.x
+      - run: npm run build
+      - run: lhci autorun
 
   # This workflow contains a single job called "build"
   build:
@@ -42,7 +34,7 @@ jobs:
 
     - name: Testing Options
       id: validate
-      uses: Cyb3r-Jak3/html5validator-action@v0.4
+      uses: Cyb3r-Jak3/html5validator-action@v0.6.1
       continue-on-error: true
       with:
         root: .
@@ -50,10 +42,10 @@ jobs:
         log_level: INFO
         extra: -lll
       
-    - uses: actions/upload-artifact@v1
-    
+    - uses: actions/upload-artifact@v2
       with:
         name: log
         path: log.log
+        
     - name: Get information
       run: echo "${{ steps.validate.outputs.result }}"
