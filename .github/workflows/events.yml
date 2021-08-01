@@ -19,7 +19,7 @@ jobs:
           max_entry: 2
           file: index.html
           timezone: Australia/Adelaide
-          format: '[${title}](${url})' # RSS Feed date is not the date of the event
+          format: '- [${title}](${url})' # RSS Feed date is not the date of the event
 
       - if: ${{ steps.feed.outputs.changed == true }}
         uses: sarisia/actions-commit@master
