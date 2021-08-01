@@ -16,15 +16,14 @@ jobs:
     name: Lighthouse CI
     runs-on: ubuntu-latest
     env:
-      LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - run: npm install && npm install -g @lhci/cli@0.8.x
+      - run: npm install -g @lhci/cli@0.8.x
       - run: lhci autorun
 
   # This workflow contains a single job called "build"
