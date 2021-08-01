@@ -15,7 +15,7 @@ jobs:
         uses: sarisia/actions-readme-feed@v1.6.2
         id: feed
         with:
-          url: https://www.meetup.com/Adelaide-dotNET/events/rss/
+          url: https://feeds.feedburner.com/adnug-events
           max_entry: 2
           file: index.html
           timezone: Australia/Adelaide
