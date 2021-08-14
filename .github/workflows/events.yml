@@ -14,6 +14,7 @@ jobs:
       - name: Get RSS Feed
         uses: sarisia/actions-readme-feed@v1.6.2
         id: feed
+        continue-on-error: true
         with:
           url: https://feeds.feedburner.com/adnug-events
           max_entry: 2
