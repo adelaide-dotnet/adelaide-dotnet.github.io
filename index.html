@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' ; script-src 'none'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self' ; media-src 'self' ; frame-src 'none'; object-src 'none'; require-trusted-types-for 'script'">
   <title>Adelaide .NET User Group</title>
   <meta name="description" content="Information about the Adelaide .NET User Group" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 
 <body>
-
   <h1><abbr title="Adelaide .NET User Group">ADNUG</abbr></h1>
 
   <p>A monthly meeting of professional and enthusiast software developers, discussing all things .NET (Microsoft and
@@ -26,7 +27,7 @@
     <h2>Upcoming events</h2>
     <ul>
 <!-- feed start -->
-<li><a href="">How do I get rid of my ifs, with Calvin Hong</a></li>
+<li><a href="https://www.meetup.com/en-AU/adelaide-dotnet/events/290867786/">How do I get rid of my ifs, with Calvin Hong</a></li>
 <!-- feed end -->
     </ul>
   </section>
@@ -36,7 +37,7 @@
 
     <p>
       <a href="https://www.meetup.com/en-AU/Adelaide-dotNET/">Meetup</a>
-      <a href="https://www.youtube.com/channel/UC2ADic3W47_Ms9vU96MsG2A">YouTube</a>
+      <a href="https://www.youtube.com/@AdelaideDotNETUserGroup">YouTube</a>
       <a href="https://feeds.feedburner.com/adnug">Podcast</a>
     </p>
 
