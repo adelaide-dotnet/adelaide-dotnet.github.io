@@ -38,7 +38,7 @@ jobs:
 
     - name: Testing Options
       id: validate
-      uses: Cyb3r-Jak3/html5validator-action@v0.6.1
+      uses: Cyb3r-Jak3/html5validator-action@v7.2.0
       continue-on-error: true
       with:
         root: .
