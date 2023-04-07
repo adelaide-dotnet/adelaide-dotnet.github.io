@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '16'
 
-      - run: npm install -g @lhci/cli@0.10.x
+      - run: npm install -g @lhci/cli@latest
       - run: lhci autorun
 
   # This workflow contains a single job called "build"
